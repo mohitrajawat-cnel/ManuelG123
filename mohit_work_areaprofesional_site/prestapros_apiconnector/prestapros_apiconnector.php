@@ -911,52 +911,7 @@ class prestapros_apiconnector extends Module
 
 	public function hookDisplayCheckoutSummaryTop()
 	{
-	  ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-	  <script>
-jQuery(document).ready(function(){
-	var keys = [];
-	var amountarray = [];
-
-	var count = 0;
-	jQuery(".promo-name.card-block li .voucher-info span").each(function(index ){
-
-	   var checkfgsd = jQuery(this).attr("class");
-
-	   if(checkfgsd == 'label')
-	   {
-			var label = jQuery(this).text();
-			keys.push(label);
-	   }
-	   else if(checkfgsd == 'value')
-	   {
-			var value = jQuery(this).text();
-			amountarray.push(value);
-	   }
-
-	   count = parseInt(count) + 1;
-	
-	});
-    var amount_value =0;
-	var all_amount =0;
-	jQuery.each( keys, function (key, valuesdfgsd){
-		
-		if(valuesdfgsd == 'Descuento de Merchandising')
-		{
-			amount_value = amountarray[key].match(/\d+/);
-
-            all_amount = parseInt(amount_value) + parseInt(all_amount);
-			
-		}
-
-	});
-	// jQuery(".cart-summary-line").remove(".testhwe");
-	// jQuery(".cart-summary-line").append('<div class="voucher-info testhwe"><span class="label">Descuento de Merchandising</span><span class="value">-'+all_amount+',00&nbsp;€</span></div>')
-
-});
-		</script>
-
-	  <?php
+	 
 	}
 
 	public function hookDisplayOrderConfirmation($params)
